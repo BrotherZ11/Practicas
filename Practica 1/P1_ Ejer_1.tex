@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,activeacute]{babel}
+\usepackage{mathtools}
+\usepackage{graphicx}
+
+
+\title{Práctica 1}
+\author{David Zarzavilla Borrego}
+\date{Curso 2022/23}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+En este primer ejercicio queremos hacer la potencia $R^3$ de 
+
+R=\{(1,1),(1,2),(2,3),(3,4)\}
+
+\vspace{5mm}
+Para hacer $R^3$ primero tenemos que hacer $R^2$, es decir:
+
+$R^2=R \circ R$
+
+$R^3 = R^2 \circ R$
+
+Para calcular $R^2$ usamos la propiedad transitiva:
+
+$(a,b) \in R \wedge (b,c) \in R \rightarrow (a,c) \in R$, siendo 
+
+R =\{(1,1),(1,2),(2,3),(3,4)\}
+
+\vspace{5mm}
+Empezamos con $R^2$
+
+$R^2$ = \{(1,1),(1,2),(1,3),(2,4)\} ya que al usar la propiedad transitiva, el 1 al estar con el 2, también esta con el 3, ya que el 2 está con el 3, así como el 2 esta con el 4, porque el 2 está con el 3 y el 3 con el 4.
+
+\vspace{5mm}
+Finalmente calculamos $R^3$ a partir de $R^2$
+
+$R^3$ = \{(1,1),(1,2),(1,3),(1,4)\} ya que el único número que está con el 4 es el 2 y como el 2 está con el 1, el 1 está con el 4.
+
+\newpage
+Ahora, tenemos que comprobar la solución con el script powerrelation.m
+
+\vspace{5mm}
+
+\includegraphics[scale=0.25]{Captura.png}
+
+\vspace{5mm}
+Como podemos observar en la captura realizada en el terminal octave y realizando el script, las soluciones son las mismas.
+\end{document}
