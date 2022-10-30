@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,activeacute]{babel}
+\usepackage{mathtools}
+\usepackage{graphicx}
+
+
+\title{Práctica 2}
+\author{David Zarzavilla Borrego}
+\date{Curso 2022/23}
+\begin{document}
+
+\maketitle
+
+\section{Ejercicio 1}
+\subsection{1a}
+
+En este primer ejercicio vamos a crear una AFD que reconoza las cadenas que solo contienen a.
+
+Un AFD es una 5-tupla (K,$\sum, \delta$, s, F)
+
+K es un conjunto de estados no vacíos
+
+$\sum$ es un alfabeto
+
+$\delta$ : K x $\sum$ $\rightarrow$ K es la funcion de transicion
+
+s $\in$ K es el estado inicial
+
+F $\subseteq$ K es el conjunto de estados finales
+
+\vspace{5mm}
+En este apartado nos pide un ejemplo para que reconozca la cadena pedida, por tanto:
+
+$M = (\{q_0, q_1\}, \{a, b\}, \{(q_0, a, q_0), (q_0, b, q_1), (q_1, a, q_1), (q_1, b, q_1)\}, q_0, \{q_0\})$
+
+\vspace{5mm}
+\includegraphics[scale=1]{DFA.png}
+
+\subsection{1b}
+
+En este apartado nos piden probar 6 cadenas, para ver si son aceptadas o rechazas, para ello usamos el programa JFlap, quedando tal que así:
+
+\vspace{5mm}
+\includegraphics[scale=0.35]{test.png}
+
+\newpage
+\section{Ejercicio 2}
+
+En este ejercio usaremos el script finiteautomata.m para crear el automata que hemos diseñado, para ello primero tendremos que introducir en finiteautomata.json nuestro automata y poder ejecutarlo con el script en octave, al ejecutarlo nos da lo siguiente:
+
+\begin{verbatim}
+    {
+    "name" : "a*",
+    "representation" : {
+      "K" : ["q0", "q1"],
+      "A" : ["a", "b"],
+      "s" : "q0",
+      "F" : ["q0"],
+      "t" : [["q0", "a", "q0"],
+             ["q0", "b", "q1"],
+             ["q1", "a", "q1"],
+             ["q1", "b", "q1"]]
+      }
+\end{verbatim}
+
+\vspace{5mm}
+\includegraphics[scale=0.4]{AF.png}
+
+\vspace{5mm}
+Pudiendo poner el resultado escrito a mano en LaTeX:
+
+$M = (\{q_0, q_1\}, \{a, b\}, \{(q_0, a, q_0), (q_0, b, q_1), (q_1, a, q_1), (q_1, b, q_1)\}, q_0, \{q_0\})$
+
+$w = a$
+
+$(q_0, a) \vdash (q_0, \varepsilon)$
+
+x $\in$ L(M)
+
+ans = 1
+
+\end{document}
